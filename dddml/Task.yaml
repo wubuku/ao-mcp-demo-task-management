@@ -1,0 +1,127 @@
+valueObjects:
+  TaskId:
+    properties:
+      Id:
+        type: string
+        description: "Unique identifier for the task"
+
+  Tag:
+    properties:
+      Name:
+        type: string
+        description: "Tag name"
+      Color:
+        type: string
+        description: "Tag color (optional)"
+
+aggregates:
+  Task:
+    metadata:
+      Preprocessors: ["CRUD_IT"]
+      CRUD_IT_NO_DELETE: true
+    id:
+      name: TaskId
+      type: TaskId
+      generator:
+        class: sequence
+        structName: TaskIdSequence
+    properties:
+      Title:
+        type: string
+        description: "Task title"
+      Description:
+        type: string
+        description: "Task description"
+      Priority:
+        type: string
+        description: "Task priority"
+      Assignee:
+        type: string
+        description: "Person assigned to the task"
+      DueDate:
+        type: number
+        description: "Due date timestamp"
+      Status:
+        type: string
+        description: "Current task status"
+        initializationLogic:
+          value: "TODO"
+      Tags:
+        itemType: Tag
+        isList: true
+        description: "Task tags"
+      CreatedAt:
+        type: number
+        description: "Creation timestamp"
+        initializationLogic:
+          __CONTEXT_VARIABLE__: CurrentTimestamp
+      UpdatedAt:
+        type: number
+        description: "Last update timestamp"
+        initializationLogic:
+          __CONTEXT_VARIABLE__: CurrentTimestamp
+    methods:
+      CreateTask:
+        shouldCreateOnDemand: true
+        metadata:
+          MessagingCommandName: "CreateTask"
+        description: "Create a new task"
+        parameters:
+          Title:
+            type: string
+          Description:
+            type: string
+          Priority:
+            type: string
+          Assignee:
+            type: string
+          DueDate:
+            type: number
+          Tags:
+            itemType: Tag
+            isList: true
+        event:
+          name: "TaskCreated"
+
+      UpdateTask:
+        metadata:
+          MessagingCommandName: "UpdateTask"
+        description: "Update task information"
+        parameters:
+          Title:
+            type: string
+          Description:
+            type: string
+          Priority:
+            type: string
+          Assignee:
+            type: string
+          DueDate:
+            type: number
+          Tags:
+            itemType: Tag
+            isList: true
+        event:
+          name: "TaskUpdated"
+
+      StartTask:
+        metadata:
+          MessagingCommandName: "StartTask"
+        description: "Mark task as in progress"
+        event:
+          name: "TaskStarted"
+
+      CompleteTask:
+        metadata:
+          MessagingCommandName: "CompleteTask"
+        description: "Mark task as completed"
+        event:
+          name: "TaskCompleted"
+
+      CancelTask:
+        metadata:
+          MessagingCommandName: "CancelTask"
+        description: "Cancel the task"
+        event:
+          name: "TaskCancelled"
+
