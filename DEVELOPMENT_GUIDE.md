@@ -7,7 +7,7 @@
 - Install Node.js and npm
 - Install AOS
 - Install Docker
-- Configure the [iTerm MCP Server](https://github.com/ferrislucas/iterm-mcp) in your MCP Client (e.g., Cursor) for automated testing.
+- Install iTerm2 and configure the [iTerm MCP Server](https://github.com/ferrislucas/iterm-mcp) in your MCP Client (e.g., Cursor) for automated testing.
 - Pull the DDDML AO MCP Server image by running `docker pull wubuku/dddml-ao-mcp-server:latest`.
 
 ## DDDML AO MCP Server

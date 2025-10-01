@@ -7,7 +7,7 @@
 - 安装 Node.js 和 npm
 - 安装 AOS
 - 安装 Docker
-- 在 MCP Client（如 Cursor）中配置好 [iTerm MCP Server](https://github.com/ferrislucas/iterm-mcp)（用于自动化测试）
+- 安装 iTerm2 并在 MCP Client（如 Cursor）中配置好 [iTerm MCP Server](https://github.com/ferrislucas/iterm-mcp)（用于自动化测试）
 - 运行 `docker pull wubuku/dddml-ao-mcp-server:latest` 将 DDDML AO MCP Server 拉到本地
 
 ## DDDML AO MCP Server
