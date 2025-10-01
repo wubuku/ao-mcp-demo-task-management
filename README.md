@@ -1,6 +1,6 @@
 # Task Management System
 
-> 📖 **English Version**: [README.md](README.md) | **中文版**: [README_CN.md](README_CN.md) | **开发指南**: [DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)
+> 📖 **English Version**: [README.md](README.md) | **中文版**: [README_CN.md](README_CN.md) | **Development Guide**: [DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)
 
 A simple task management system built with DDDML model-driven development, implemented using AO (Actor Oriented) architecture.
 

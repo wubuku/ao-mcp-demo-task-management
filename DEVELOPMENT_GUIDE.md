@@ -57,7 +57,7 @@ Business Requirements:
 - Test case execution methods.
 - Result validation techniques.
 
-Use the iTerm MCP Server to test the generated code and ensure all tests pass. If you encounter issues, debug the code and re-run the tests until they succeed.
+Use the iTerm MCP Server to test the generated code and ensure all tests pass. If you encounter issues, fix the code and re-run the tests until they succeed.
 
 Finally, document and summarize the entire process in the `README.md` file.
 ```
