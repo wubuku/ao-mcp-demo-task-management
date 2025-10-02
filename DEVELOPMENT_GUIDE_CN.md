@@ -52,35 +52,19 @@ https://gist.github.com/wubuku/d5a567d20f2820c011317c57cbbb2638
 - 支持按状态、负责人、优先级查询任务
 - 支持更新任务信息
 
-你应该从 MCP server 提供的示例模型资源中学习如何定义 DDDML 模型，并利用其提供的工具生成代码。
+从 MCP server 资源中学习 DDDML 模型定义，使用其工具生成代码。
 
-注意：
-- 找到所有 `*_logic.lua` 文件，**往其中文填充具体的业务逻辑代码**
-- 如果需要修改 DDDML 模型文件，应该**使用代码生成工具重新生成代码**
+核心要点：
+- 找到并填充所有 `*_logic.lua` 文件的业务逻辑代码
+- 修改 DDDML 模型后，使用代码生成工具重新生成代码
 
-你应该使用 iTerm MCP Server 对实现代码进行测试，并且让测试通过。如果有问题，请修复代码，然后重新测试。
+**必须使用 iTerm MCP Server 执行所有 AO 命令，不要在外部终端操作！**
 
-**重要提醒：请始终使用 iTerm MCP Server 执行 AO 相关命令，不要在外部终端中执行！**
+关键步骤：
+1. **启动 AO 进程**：`mcp_iterm-mcp_write_to_terminal command="aos test-blog-$(date +%s)"`
+2. **加载和测试代码**：通过 iTerm MCP Server 执行所有操作
 
-具体指导：
-1. **启动 AO 进程**：使用 iTerm MCP Server 的 `mcp_iterm-mcp_write_to_terminal` 命令启动 AO 进程，例如：
-   ```bash
-   # 启动 AO 进程（使用时间戳确保进程名唯一）
-   mcp_iterm-mcp_write_to_terminal command="aos test-blog-$(date +%s)"
-   ```
-   不要直接在外部终端运行 `aos` 命令。
-
-2. **加载应用代码**：使用 iTerm MCP Server 执行应用加载命令。
-
-3. **执行测试用例**：通过 iTerm MCP Server 运行测试命令。
-
-**注意观察 AO MCP Server 的资源或提示**，这些资源包含了如何使用 iTerm MCP Server 进行测试的详细说明，包括：
-- AO 进程启动和配置
-- 应用代码加载
-- 测试用例执行方法
-- 结果验证技巧
-
-最后将整个过程和总结为 `README.md` 文档。
+观察 AO MCP Server 的测试指导资源，最后总结过程到 `README.md`。
 ```
 
 ---

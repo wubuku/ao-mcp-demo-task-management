@@ -51,35 +51,19 @@ Business Requirements:
 - Query tasks by status, assignee, and priority.
 - Update existing task information.
 
-You should learn how to define DDDML models from the example model resources provided by the MCP server and use its tools to generate code.
+Learn DDDML model definitions from MCP server resources and use its tools to generate code.
 
-Note:
-- Find all `*_logic.lua` files and **fill them with specific business logic code**
-- If you need to modify DDDML model files, **use code generation tools to regenerate the code**
+Core Points:
+- Find and fill all `*_logic.lua` files with business logic code
+- Use code generation tools to regenerate code after modifying DDDML models
 
-Use the iTerm MCP Server to test the generated code and ensure all tests pass. If you encounter issues, fix the code and re-run the tests until they succeed.
+**Always use iTerm MCP Server for all AO commands, never use external terminals!**
 
-**Important Reminder: Always use the iTerm MCP Server to execute AO-related commands, never run them in an external terminal!**
+Key Steps:
+1. **Start AO Process**: `mcp_iterm-mcp_write_to_terminal command="aos test-blog-$(date +%s)"`
+2. **Load and Test Code**: Execute all operations through iTerm MCP Server
 
-Specific Guidelines:
-1. **Start AO Process**: Use the iTerm MCP Server's `mcp_iterm-mcp_write_to_terminal` command to start AO processes, for example:
-   ```bash
-   # Start AO process (using timestamp to ensure unique process name)
-   mcp_iterm-mcp_write_to_terminal command="aos test-blog-$(date +%s)"
-   ```
-   Do not run the `aos` command directly in an external terminal.
-
-2. **Load Application Code**: Execute application loading commands through the iTerm MCP Server.
-
-3. **Execute Test Cases**: Run test commands through the iTerm MCP Server.
-
-**Monitor the AO MCP Server for resources and prompts.** These will provide detailed instructions for testing with the iTerm MCP Server, including:
-- AO process startup and configuration.
-- Application code loading procedures.
-- Test case execution methods.
-- Result validation techniques.
-
-Finally, document and summarize the entire process in the `README.md` file.
+Monitor AO MCP Server testing guidance resources, finally document process in `README.md`.
 ```
 
 ---
