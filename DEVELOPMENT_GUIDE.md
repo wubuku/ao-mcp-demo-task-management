@@ -51,13 +51,19 @@ Business Requirements:
 - Query tasks by status, assignee, and priority.
 - Update existing task information.
 
+You should learn how to define DDDML models from the example model resources provided by the MCP server and use its tools to generate code.
+
+Note:
+- Find all `*_logic.lua` files and **fill them with specific business logic code**
+- If you need to modify DDDML model files, **use code generation tools to regenerate the code**
+
+Use the iTerm MCP Server to test the generated code and ensure all tests pass. If you encounter issues, fix the code and re-run the tests until they succeed.
+
 **Monitor the AO MCP Server for resources and prompts.** These will provide detailed instructions for testing with the iTerm MCP Server, including:
 - AO process startup and configuration.
 - Application code loading procedures.
 - Test case execution methods.
 - Result validation techniques.
-
-Use the iTerm MCP Server to test the generated code and ensure all tests pass. If you encounter issues, fix the code and re-run the tests until they succeed.
 
 Finally, document and summarize the entire process in the `README.md` file.
 ```
