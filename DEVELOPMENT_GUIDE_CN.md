@@ -60,6 +60,20 @@ https://gist.github.com/wubuku/d5a567d20f2820c011317c57cbbb2638
 
 你应该使用 iTerm MCP Server 对实现代码进行测试，并且让测试通过。如果有问题，请修复代码，然后重新测试。
 
+**重要提醒：请始终使用 iTerm MCP Server 执行 AO 相关命令，不要在外部终端中执行！**
+
+具体指导：
+1. **启动 AO 进程**：使用 iTerm MCP Server 的 `mcp_iterm-mcp_write_to_terminal` 命令启动 AO 进程，例如：
+   ```bash
+   # 启动 AO 进程（使用时间戳确保进程名唯一）
+   mcp_iterm-mcp_write_to_terminal command="aos test-blog-$(date +%s)"
+   ```
+   不要直接在外部终端运行 `aos` 命令。
+
+2. **加载应用代码**：使用 iTerm MCP Server 执行应用加载命令。
+
+3. **执行测试用例**：通过 iTerm MCP Server 运行测试命令。
+
 **注意观察 AO MCP Server 的资源或提示**，这些资源包含了如何使用 iTerm MCP Server 进行测试的详细说明，包括：
 - AO 进程启动和配置
 - 应用代码加载

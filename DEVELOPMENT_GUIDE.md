@@ -59,6 +59,20 @@ Note:
 
 Use the iTerm MCP Server to test the generated code and ensure all tests pass. If you encounter issues, fix the code and re-run the tests until they succeed.
 
+**Important Reminder: Always use the iTerm MCP Server to execute AO-related commands, never run them in an external terminal!**
+
+Specific Guidelines:
+1. **Start AO Process**: Use the iTerm MCP Server's `mcp_iterm-mcp_write_to_terminal` command to start AO processes, for example:
+   ```bash
+   # Start AO process (using timestamp to ensure unique process name)
+   mcp_iterm-mcp_write_to_terminal command="aos test-blog-$(date +%s)"
+   ```
+   Do not run the `aos` command directly in an external terminal.
+
+2. **Load Application Code**: Execute application loading commands through the iTerm MCP Server.
+
+3. **Execute Test Cases**: Run test commands through the iTerm MCP Server.
+
 **Monitor the AO MCP Server for resources and prompts.** These will provide detailed instructions for testing with the iTerm MCP Server, including:
 - AO process startup and configuration.
 - Application code loading procedures.
