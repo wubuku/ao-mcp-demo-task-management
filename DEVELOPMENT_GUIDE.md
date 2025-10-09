@@ -7,7 +7,8 @@
 - Install Node.js and npm
 - Install AOS
 - Install Docker
-- Install iTerm2 and configure the [iTerm MCP Server](https://github.com/ferrislucas/iterm-mcp) in your MCP Client (e.g., Cursor) for automated testing.
+- (Recommended) Install AO CLI for automated testing (`npm install -g @dddappp/ao-cli`)
+- (macOS Optional) You can also install iTerm2 and configure the [iTerm MCP Server](https://github.com/ferrislucas/iterm-mcp) in your MCP Client (e.g., Cursor) for automated testing.
 - Pull the DDDML AO MCP Server image by running `docker pull wubuku/dddml-ao-mcp-server:latest`.
 
 ## DDDML AO MCP Server
@@ -57,9 +58,9 @@ Core Points:
 - Find and fill all `*_logic.lua` files with business logic code
 - Use code generation tools to regenerate code after modifying DDDML models
 
-**Always use iTerm MCP Server for all AO commands, never use external terminals!**
+Write scripts and use AO CLI to execute automated tests.
 
-Key Steps:
+**(Optional) If you choose to use iTerm MCP Server, execute all AO commands in iTerm MCP Server, do not use external terminals!** Key Steps:
 1. **Start AO Process**: `mcp_iterm-mcp_write_to_terminal command="aos test-blog-$(date +%s)"`
 2. **Load and Test Code**: Execute all operations through iTerm MCP Server
 

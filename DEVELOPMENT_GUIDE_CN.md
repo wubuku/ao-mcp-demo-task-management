@@ -7,7 +7,8 @@
 - 安装 Node.js 和 npm
 - 安装 AOS
 - 安装 Docker
-- 安装 iTerm2 并在 MCP Client（如 Cursor）中配置好 [iTerm MCP Server](https://github.com/ferrislucas/iterm-mcp)（用于自动化测试）
+- （推荐）安装 AO CLI 用于自动化测试（`npm install -g @dddappp/ao-cli`）
+- （macOS 可选）还可以安装 iTerm2 并在 MCP Client（如 Cursor）中配置好 [iTerm MCP Server](https://github.com/ferrislucas/iterm-mcp)（用于自动化测试）
 - 运行 `docker pull wubuku/dddml-ao-mcp-server:latest` 将 DDDML AO MCP Server 拉到本地
 
 ## DDDML AO MCP Server
@@ -58,9 +59,9 @@ https://gist.github.com/wubuku/d5a567d20f2820c011317c57cbbb2638
 - 找到并填充所有 `*_logic.lua` 文件的业务逻辑代码
 - 修改 DDDML 模型后，使用代码生成工具重新生成代码
 
-**必须使用 iTerm MCP Server 执行所有 AO 命令，不要在外部终端操作！**
+编写脚本，使用 AO CLI 来执行自动化测试。
 
-关键步骤：
+**（可选）如果你选择使用 iTerm MCP Server 时，请在 iTerm MCP Server 中执行所有 AO 命令，不要在外部终端操作！**关键步骤：
 1. **启动 AO 进程**：`mcp_iterm-mcp_write_to_terminal command="aos test-blog-$(date +%s)"`
 2. **加载和测试代码**：通过 iTerm MCP Server 执行所有操作
 
